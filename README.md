@@ -1,24 +1,16 @@
-# Getting_and_Cleaning_Data
-This repository is used for coursera project on Getting and cleaning Data
-Getting and Cleaning Data Project
-Author: Madan Aravind
-Blog Post: Getting and Cleaning Data Review
-Data Zip File Location: UC Irvine Repo
+JHU Data Science Specialization - Getting and Cleaning Data Project
+This repository contains my Getting and Cleaning Data project submission. Here you will find the script used to create the data set along with a file containing the associated data cleaning functions and a file detailing the entire process of creating this data set as well as information about the variables in the data set.
 
-Goal of the Project
-1. A tidy data set
-2. A link to a Github repository with your script for performing the analysis
-3. A code book that describes the variables, the data, and any transformations or work that I performed to clean up the data called        CodeBook.md.I also included a README.md in the repo with. This repo explains how all of the scripts work and how they are connected.
-4. Analysis R Script
+Running the script
+Make sure that the following packages have been installed and loaded into the current R session:
 
-# 1. Merges the training and the test sets to create one data set.
-# 2. Extracts only the measurements on the mean and standard deviation for each measurement.
-# 3. Uses descriptive activity names to name the activities in the data set
-# 4. Appropriately labels the data set with descriptive variable names.
-# 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-# Load Packages and get the Data
-# Load activity labels + features
-# Load train datasets
-# Load test datasets
-# merge datasets
-# Convert classLabels to activityName basically. More explicit. 
+tidyverse
+magrittr
+zeallot
+I have divided the script into two files:
+
+run_analysis.R: this file is the script for performing the actual data wrangling.
+data_wrangling_functions.R: this file contains the functions called in the run_analysis.R script.
+The script uses data from the Human Activity Recognition Using Smartphones Data Set that can be found here. The data is stored in a zip file which, when unpacked, will contain a directory called UCI HAR Dataset along with some additional files.
+
+This is important to note as the script assumes that this directory is a subdirectory of the current directory. In order to run the script copy the unpacked UCI HAR Dataset directory to the current directory. From here, make sure that the R files listed above are in the current working directory before setting this directory to be the current R working environment. You can then run the run_analysis.R script by sourcing it and it will produce a tidy data frame (or more accurately, a tibble) called smartphone_data. More information on the transformations applied to the data as well as on the variables contained in smartphone_data can be found in the CodeBook.md file
